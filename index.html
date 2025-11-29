@@ -4,162 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jubrion AB – Urban Sandlund</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f5f5f5;
-            color: #222;
-        }
-
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        nav a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #0054a6;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px 15px 40px 15px;
-        }
-
-        section {
-            background-color: #ffffff;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-
-        h1, h2 {
-            color: #003366;
-            margin-top: 0;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .tagline {
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        .kontakt-info p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                padding-bottom: 5px;
-            }
-
-            nav a {
-                margin-left: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Jubrion AB logotyp">
-            <div>
-                <div class="logo-text">Jubrion AB</div>
-                <div class="tagline">Ägare och grundare: Urban Sandlund</div>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="logo">
+                <img src="logo.png" alt="Jubrion AB logotyp">
+                <div class="logo-text-block">
+                    <div class="logo-text">Jubrion AB</div>
+                    <div class="tagline">Ägare och grundare: Urban Sandlund</div>
+                </div>
             </div>
+            <nav class="main-nav">
+                <a href="#om">Om Jubrion</a>
+                <a href="#tjanster">Tjänster</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
         </div>
-        <nav>
-            <a href="#om">Om Jubrion</a>
-            <a href="#tjanster">Tjänster</a>
-            <a href="#kontakt">Kontakt</a>
-        </nav>
     </header>
 
     <main>
-        <section id="om">
-            <h1>Jubrion AB</h1>
-            <p><strong>Jubrion AB</strong> är ett flexibelt konsult- och utvecklingsbolag baserat i Luleå. 
-            Företaget arbetar i gränslandet mellan teknik, affärsutveckling och digitala hjälpmedel – 
-            där modern AI-teknik kombineras med lång erfarenhet av projektledning, systemutveckling 
-            och industriella lösningar.</p>
-
-            <p>Med över 30 års erfarenhet från industriella och tekniska miljöer – och en bakgrund som 
-            utvecklare, chef och projektledare – hjälper Urban Sandlund företag att få struktur, 
-            förbättra sina processer och genomföra projekt med tydlighet och resultatfokus.</p>
-
-            <p>Jubrion AB samarbetar gärna med mindre bolag, föreningar och lokala initiativ, 
-            där behovet ofta är en kombination av struktur, praktiskt genomförande och digitalt stöd.</p>
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <h1>Struktur, teknik och utveckling för din verksamhet</h1>
+                    <p>
+                        Jubrion AB hjälper små och medelstora företag att få ordning på projekt,
+                        processer och digitala verktyg – med kombinationen av erfarenhet,
+                        tydlighet och modern teknik.
+                    </p>
+                    <a href="#kontakt" class="btn-primary">Kontakta Jubrion</a>
+                </div>
+            </div>
         </section>
 
-        <section id="tjanster">
+        <section id="om" class="section-card">
+            <h2>Om Jubrion AB</h2>
+            <p>
+                <strong>Jubrion AB</strong> är ett flexibelt konsult- och utvecklingsbolag baserat i Luleå.
+                Företaget arbetar i gränslandet mellan teknik, affärsutveckling och digitala hjälpmedel – där
+                modern AI-teknik kombineras med lång erfarenhet av projektledning, systemutveckling och
+                industriella lösningar.
+            </p>
+            <p>
+                Med över 30 års erfarenhet från industriella och tekniska miljöer – och en bakgrund som
+                utvecklare, chef och projektledare – hjälper Urban Sandlund företag att få struktur,
+                förbättra sina processer och genomföra projekt med tydlighet och resultatfokus.
+            </p>
+            <p>
+                Jubrion AB samarbetar gärna med mindre bolag, föreningar och lokala initiativ, där behovet
+                ofta är en kombination av struktur, praktiskt genomförande och digitalt stöd.
+            </p>
+        </section>
+
+        <section id="tjanster" class="section-card">
             <h2>Tjänster</h2>
             <p>Exempel på områden där Jubrion AB kan stödja din verksamhet:</p>
-            <ul>
-                <li><strong>Teknisk projektledning</strong> – planering, uppföljning och genomförande av tekniska projekt.</li>
-                <li><strong>Affärsutveckling och rådgivning</strong> – stöd vid nya satsningar, erbjudanden och rutiner.</li>
-                <li><strong>Process- och kvalitetsarbete</strong> – struktur, dokumentation och förbättring av arbetssätt.</li>
-                <li><strong>Digitalisering &amp; AI-stöd</strong> – hjälp att använda digitala verktyg och AI i vardagen, 
-                    särskilt för små och medelstora verksamheter.</li>
-                <li><strong>Webb och systemstöd i enklare omfattning</strong> – enklare hemsidor, struktur på information och stöd vid val av verktyg.</li>
-            </ul>
-            <p>Upplägg och omfattning anpassas alltid efter kundens behov. Uppdrag kan ske som kortare insatser, löpande stöd eller 
-            projektbaserade samarbeten.</p>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Teknisk projektledning</h3>
+                    <p>
+                        Planering, uppföljning och genomförande av tekniska projekt, med fokus på
+                        tydlighet, riskhantering och leverans.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Affärsutveckling & rådgivning</h3>
+                    <p>
+                        Stöd vid nya satsningar, erbjudanden och rutiner – från idé till konkret plan
+                        och genomförande.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Process- & kvalitetsarbete</h3>
+                    <p>
+                        Struktur, dokumentation och förbättring av arbetssätt, gärna med stöd av enkla
+                        digitala verktyg.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Digitalisering & AI-stöd</h3>
+                    <p>
+                        Hjälp att använda digitala verktyg och AI i vardagen, särskilt anpassat för
+                        mindre verksamheter som vill komma igång på ett enkelt sätt.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Webb & systemstöd</h3>
+                    <p>
+                        Enklare hemsidor, struktur på information och rådgivning kring val av verktyg
+                        och system för din verksamhet.
+                    </p>
+                </article>
+            </div>
         </section>
 
-        <section id="kontakt">
+        <section id="kontakt" class="section-card section-contact">
             <h2>Kontakt</h2>
             <p>Vill du veta mer eller diskutera ett möjligt uppdrag? Hör gärna av dig.</p>
             <div class="kontakt-info">
@@ -169,11 +115,11 @@
                 <p>Telefon: <a href="tel:+46701234567">+46 70 123 45 67</a></p>
                 <p>Ort: Luleå, Sverige</p>
             </div>
-            <p>Skicka gärna ett mejl med en kort beskrivning av ditt behov, så återkommer vi med förslag på upplägg.</p>
+            <a href="mailto:info@jubrion.se" class="btn-secondary">Skicka e-post</a>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         &copy; <span id="year"></span> Jubrion AB – Urban Sandlund
     </footer>
 
