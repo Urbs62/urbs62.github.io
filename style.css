@@ -63,9 +63,9 @@ body {
 
 .main-nav {
     display: flex;
-    gap: 16px;
+    gap: 10px;
     flex-wrap: wrap;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .main-nav a {
