@@ -64,8 +64,8 @@ body {
 .main-nav {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
     font-size: 0.85rem;
+    flex-wrap: wrap;
 }
 
 .main-nav a {
