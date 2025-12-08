@@ -26,7 +26,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 16px;  /* Ingen extra höjd runt loggan */
-    height: 120px;    /* Tvinga headern till en fast höjd */
+    height: 130px;    /* Tvinga headern till en fast höjd */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -167,7 +167,7 @@ main {
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(15, 58, 123, 0.06);
     border: 1px solid #e0e4f0;
-    scroll-margin-top: 150px; /* justera värdet vid behov */
+    scroll-margin-top: 140px; /* justera värdet vid behov */
 }
 
 .section-card h2 {
