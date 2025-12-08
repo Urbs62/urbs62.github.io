@@ -92,7 +92,7 @@ body {
     padding: 40px 16px 32px 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     margin-bottom: 24px;
-    scroll-margin-top: 120px;
+    scroll-margin-top: 150px;
 }
 
 .hero-inner {
@@ -166,7 +166,7 @@ main {
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(15, 58, 123, 0.06);
     border: 1px solid #e0e4f0;
-    scroll-margin-top: 120px; /* justera värdet vid behov */
+    scroll-margin-top: 150px; /* justera värdet vid behov */
 }
 
 .section-card h2 {
