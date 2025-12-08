@@ -25,7 +25,8 @@ body {
 .topbar-inner {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 10px 16px;
+    padding: 0 16px;  /* Ingen extra höjd runt loggan */
+    height: 120px;    /* Tvinga headern till en fast höjd */
     display: flex;
     align-items: center;
     justify-content: space-between;
