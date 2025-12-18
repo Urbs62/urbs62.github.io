@@ -1,1 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Urban Sandlund — CV</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a2e;
+      --text:#e7eefc;
+      --muted:#b6c4e6;
+      --line:rgba(255,255,255,.08);
+      --accent:#7aa7ff;
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(122,167,255,.25), transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, rgba(122,167,255,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ max-width: var(--max); margin: 40px auto; padding: 0 18px 60px; }
+
+    .topbar{
+      display:flex; gap:16px; justify-content:flex-end; align-items:center;
+      margin-bottom:14px; color:var(--muted); font-size:14px;
+    }
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:.15s ease;
+    }
+    .btn:hover{ background:rgba(255,255,255,.08); }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    header{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:18px;
+      padding:26px;
+      border-bottom:1px solid var(--line);
+      align-items:center;
+    }
+
+    .photo{
+      width:140px; height:140px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(122,167,255,.18), rgba(255,255,255,.03)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 8px, rgba(255,255,255,.02) 8px 16px);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(231,238,252,.7);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    h1{ margin:0; font-size:34px; letter-spacing:-.02em; line-height:1.1; }
+    .headline{ margin-top:8px; color:var(--muted); font-size:15px; }
+
+    .meta{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background:rgba(122,167,255,.9);
+      box-shadow: 0 0 0 4px rgba(122,167,255,.15);
+    }
+
+    main{ display:grid; grid-template-columns: 1.1fr .9fr; gap:0; }
+    .col{ padding:24px 26px; }
+    .col + .col{ border-left:1px solid var(--line); background:rgba(0,0,0,.06); }
+
+    section{ margin-bottom:22px; }
+    .h{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(231,238,252,.75);
+      margin:0 0 10px 0;
+    }
+    p{ margin:0 0 10px 0; color:rgba(231,238,252,.9); }
+
+    ul{ margin:10px 0 0 0; padding-left:18px; color:rgba(231,238,252,.9); }
+    li{ margin:7px 0; }
+
+    .xp{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 14px;
+      background:rgba(255,255,255,.03);
+      margin-bottom:12px;
+    }
+    .xphead{ display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
+    .role{ font-weight:700; font-size:15px; margin:6px 0 0; }
+    .org{ color:var(--muted); font-size:14px; margin:0; }
+    .yrs{ color:rgba(231,238,252,.72); font-size:13px; white-space:nowrap; }
+
+    .skills{ display:flex; flex-wrap:wrap; gap:8px; }
+    .tag{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:rgba(231,238,252,.9);
+    }
+
+    footer{
+      padding:16px 26px 22px;
+      border-top:1px solid var(--line);
+      color:rgba(231,238,252,.65);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    @media (max-width: 860px){
+      header{ grid-template-columns: 1fr; }
+      .photo{ width:120px; height:120px; }
+      main{ grid-template-columns: 1fr; }
+      .col + .col{ border-left:none; border-top:1px solid var(--line); }
+    }
+
+    @media print{
+      body{ background:#fff; color:#111; }
+      .wrap{ margin:0; padding:0; max-width:none; }
+      .topbar{ display:none; }
+      .card{ box-shadow:none; border:1px solid #ddd; }
+      header, .col, footer{ background:#fff !important; }
+      .col + .col{ border-left:1px solid #eee; }
+      .photo{ border:1px solid #ddd; color:#666; }
+      .tag, .pill, .xp{ border-color:#e6e6e6; background:#fff; }
+      a{ color:#111; text-decoration:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <span>Tip: Print → Save as PDF</span>
+      <button class="btn" onclick="window.print()">Print / PDF</button>
+    </div>
+
+    <div class="card">
+      <header>
+        <div class="photo">Photo</div>
+        <div>
+          <h1>Urban Sandlund</h1>
+          <div class="headline">Senior Project Leader · Delivery &amp; Operations · Customer Success</div>
+
+          <div class="meta">
+            <span class="pill"><span class="dot"></span> Luleå, Sweden</span>
+            <span class="pill">+46 70 524 65 84</span>
+            <span class="pill"><a href="mailto:urban@sandlund.org">urban@sandlund.org</a></span>
+            <span class="pill">LinkedIn: <a href="#" title="Add your LinkedIn URL">add link</a></span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="col">
+          <section>
+            <h2 class="h">Profile</h2>
+            <p>
+              Senior leader with extensive experience in people management, project delivery and customer-facing roles
+              within industrial and technology-driven organizations. Known for building trust, driving execution and
+              creating clarity in complex environments.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="h">Professional Experience</h2>
+
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Mobilaris Industrial Solutions AB</div>
+                  <div class="role">Customer Success Manager</div>
+                </div>
+                <div class="yrs">2022 – 2025</div>
+              </div>
+              <ul>
+                <li>Customer ownership and key customer relations</li>
+                <li>Responsibility for production of Mobilaris hardware products</li>
+                <li>Sales support including customer meetings and quotation work</li>
+                <li>Technical investigations and analyses (AI-supported)</li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Epiroc</div>
+                  <div class="role">Project Leader</div>
+                </div>
+                <div class="yrs">2021 – 2022</div>
+              </div>
+              <ul>
+                <li>Delivery responsibility for customer projects</li>
+                <li>Coordination between teams, customers and stakeholders</li>
+                <li>Planning, execution and follow-up of project deliveries</li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Mobilaris Mining and Civil Engineering AB</div>
+                  <div class="role">Agile Coach · Project Leader · Service &amp; Support Manager</div>
+                </div>
+                <div class="yrs">2014 – 2021</div>
+              </div>
+              <ul>
+                <li>Agile coaching of development and delivery teams</li>
+                <li>Project leadership and delivery responsibility</li>
+                <li>Management of service and support operations</li>
+                <li>Customer interaction and operational improvements</li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Tieto</div>
+                  <div class="role">Delivery Manager (People Manager)</div>
+                </div>
+                <div class="yrs">2010 – 2014</div>
+              </div>
+              <ul>
+                <li>Line management with personnel responsibility</li>
+                <li>Delivery ownership for GSM BTS projects</li>
+                <li>Team development, coaching and performance management</li>
+                <li>Resource planning and utilization optimization</li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Tieto</div>
+                  <div class="role">Line Manager (People Manager)</div>
+                </div>
+                <div class="yrs">2002 – 2009</div>
+              </div>
+              <ul>
+                <li>Personnel responsibility and team leadership</li>
+                <li>Project and delivery oversight</li>
+                <li>Ensuring quality, performance, cost efficiency and customer satisfaction</li>
+              </ul>
+            </div>
+
+            <!-- FIXED GAP -->
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Ericsson AB</div>
+                  <div class="role">Line Manager (People Manager)</div>
+                </div>
+                <div class="yrs">1993 – 2002</div>
+              </div>
+              <ul>
+                <li>People management and leadership within the organization</li>
+                <li>Responsible for deliveries from a customer perspective: quality, performance, competence, cost and security</li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <div class="xphead">
+                <div>
+                  <div class="org">Ericsson AB</div>
+                  <div class="role">Software Developer</div>
+                </div>
+                <div class="yrs">1985 – 1993</div>
+              </div>
+              <ul>
+                <li>Software design and development in telecom and defence systems</li>
+              </ul>
+            </div>
+
+          </section>
+        </div>
+
+        <div class="col">
+          <section>
+            <h2 class="h">Core Competencies</h2>
+            <div class="skills">
+              <span class="tag">Project &amp; Delivery Leadership</span>
+              <span class="tag">People Management</span>
+              <span class="tag">Customer Success</span>
+              <span class="tag">Operations</span>
+              <span class="tag">Sales Support / Pre-sales</span>
+              <span class="tag">Technical Analysis</span>
+              <span class="tag">Agile Ways of Working</span>
+              <span class="tag">Industrial Environments</span>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="h">Education</h2>
+            <p><strong>BSc in Computer Science</strong><br/>
+              University of Technology, Luleå, Sweden</p>
+          </section>
+
+          <section>
+            <h2 class="h">Courses &amp; Training (selection)</h2>
+            <ul>
+              <li>Personal Leadership – Leadership Management Institute</li>
+              <li>Solution Selling – Lindgren &amp; Partners</li>
+              <li>Qualified Leadership (4 modules) – Edward &amp; Smedje</li>
+              <li>Project Management – Informator</li>
+              <li>Software Project Management – Learning Tree International</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="h">Languages</h2>
+            <p>Swedish – Native<br/>English – Fluent</p>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <div>Urban Sandlund — CV</div>
+        <div>Last updated: 2025</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
 
