@@ -100,8 +100,10 @@
     }
 
     main{ display:grid; grid-template-columns: 1.1fr .9fr; gap:0; }
-    .col{ padding:24px 26px; }
-    .col + .col{ border-left:1px solid var(--line); background:rgba(0,0,0,.06); }
+    .col + .col{
+      border-left:1px solid var(--line);
+      background: transparent;
+    }
 
     section{ margin-bottom:22px; }
     .h{
