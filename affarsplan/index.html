@@ -1,1 +1,466 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Affärsplan — Jubrion AB</title>
+  <meta name="description" content="Affärsplan för konsultverksamhet inom teknisk rådgivning och projektstöd." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a2e;
+      --text:#e7eefc;
+      --muted:#b6c4e6;
+      --line:rgba(255,255,255,.08);
+      --accent:#7aa7ff;
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 15% 5%, rgba(122,167,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 85% 15%, rgba(255,255,255,.06), transparent 60%),
+        radial-gradient(900px 700px at 50% 95%, rgba(122,167,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: rgba(16,26,46,.55);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 0;
+    }
+    .mark{
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 35% 30%, rgba(122,167,255,.35), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,.08), transparent 55%),
+        rgba(16,26,46,.85);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: linear-gradient(120deg, transparent 35%, rgba(122,167,255,.20), transparent 65%);
+      transform: rotate(12deg);
+    }
+    .brand h1{
+      font-size: 14px;
+      letter-spacing: .2px;
+      margin:0;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand p{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border: 1px solid var(--line);
+      background: rgba(16,26,46,.55);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .btn{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border: 1px solid var(--line);
+      background: rgba(16,26,46,.85);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text);
+      cursor:pointer;
+      user-select:none;
+      transition: transform .06s ease, border-color .2s ease, background .2s ease;
+      text-decoration:none;
+    }
+    .btn:hover{
+      border-color: rgba(122,167,255,.35);
+      background: rgba(16,26,46,.95);
+      text-decoration:none;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      padding: 26px 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,46,.92), rgba(16,26,46,.65));
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-120px -80px auto auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle at 30% 30%, rgba(122,167,255,.30), transparent 60%);
+      filter: blur(2px);
+    }
+    .hero h2{
+      margin:0 0 8px 0;
+      font-size: 28px;
+      letter-spacing: -.3px;
+    }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      max-width: 70ch;
+      font-size: 14px;
+    }
+
+    /* Layout */
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 940px){
+      .grid{
+        grid-template-columns: 1.8fr .9fr;
+        align-items:start;
+      }
+    }
+
+    /* Cards */
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(16,26,46,.75);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+    }
+    .card h3{
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      letter-spacing: .2px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .section{
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    .section:first-child{
+      padding-top: 0;
+      border-top: 0;
+      margin-top: 0;
+    }
+    .section h4{
+      margin: 0 0 6px 0;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .section .meta{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    ul{
+      margin: 10px 0 0 18px;
+      padding:0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    li{ margin: 6px 0; }
+
+    /* Sidebar */
+    .side h3{ margin-bottom: 10px; }
+    .kv{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .kv .row{
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(16,26,46,.55);
+    }
+    .kv .k{
+      font-size: 11px;
+      color: var(--muted);
+      margin: 0 0 2px 0;
+    }
+    .kv .v{
+      margin:0;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align:center;
+      opacity: .9;
+    }
+
+    /* Print */
+    @media print{
+      body{
+        background:#fff;
+        color:#111;
+      }
+      .topbar, .btn{ display:none !important; }
+      .hero, .card{
+        background:#fff !important;
+        box-shadow:none !important;
+        border:1px solid #ddd !important;
+      }
+      a{ color:#111; text-decoration:underline; }
+      .wrap{ max-width: 900px; padding: 0; }
+      footer{ color:#444; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div style="min-width:0">
+          <h1>Affärsplan</h1>
+          <p>Teknisk konsultverksamhet — Jubrion AB</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <span class="chip" title="Uppdatera datum vid behov">Version: 1.0</span>
+        <span class="chip" id="todayChip">Datum: —</span>
+        <a class="btn" href="/" title="Till startsidan">← Till sandlund.org</a>
+        <button class="btn" onclick="window.print()" title="Skriv ut / Spara som PDF">🖨️ Skriv ut</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h2>Affärsplan</h2>
+      <p>
+        Denna affärsplan beskriver inriktning, tjänster och genomförande för en planerad konsultverksamhet i aktiebolagsform.
+        Verksamheten är avsedd att bedrivas med låg fast kostnadsnivå och hög flexibilitet, med fokus på uppdragsbaserad försäljning
+        av kvalificerade konsulttjänster.
+      </p>
+    </section>
+
+    <div class="grid">
+      <!-- Main -->
+      <main class="card" aria-label="Affärsplanens innehåll">
+        <div class="section" id="affarside">
+          <h4>1. Affärsidé</h4>
+          <p>
+            Verksamheten ska erbjuda <strong>teknisk rådgivning och projektstöd</strong> till organisationer med behov av senior kompetens
+            inom industriell digitalisering, systemstöd, säkerhet och verksamhetsnära IT-lösningar. Tjänsterna utformas efter kundens behov
+            och kan omfatta både kortare insatser och längre uppdrag. Uppdragen utförs huvudsakligen hos kund eller på distans.
+          </p>
+        </div>
+
+        <div class="section" id="tjanster">
+          <h4>2. Tjänster</h4>
+          <p>Följande tjänster erbjuds inom ramen för verksamheten:</p>
+          <ul>
+            <li>Teknisk rådgivning och analys</li>
+            <li>Förstudier, workshops och beslutsunderlag</li>
+            <li>Stöd vid upphandling, införande och driftsättning av tekniska system</li>
+            <li>Projektstöd och teknisk koordinering</li>
+            <li>Teknisk dokumentation och kravställning</li>
+          </ul>
+          <p class="meta">Tjänsterna säljs främst som tim- eller dagsbaserade konsultinsatser.</p>
+        </div>
+
+        <div class="section" id="marknad">
+          <h4>3. Målgrupp och marknad</h4>
+          <p>
+            Målgruppen utgörs av industriföretag, infrastruktur- och anläggningsprojekt samt offentlig sektor och större organisationer.
+            Efterfrågan på erfaren teknisk kompetens bedöms som långsiktig, särskilt i miljöer där verksamhetskritiska system och säkerhetsaspekter är centrala.
+          </p>
+        </div>
+
+        <div class="section" id="konkurrens">
+          <h4>4. Konkurrens och styrkor</h4>
+          <p>
+            Verksamhetens konkurrensfördelar bygger på lång yrkeserfarenhet och bred branschkunskap, kombinationen av teknisk kompetens och
+            verksamhetsförståelse samt erfarenhet från komplexa och säkerhetskritiska miljöer. Låg kostnadsstruktur ger flexibilitet och stabilitet.
+          </p>
+        </div>
+
+        <div class="section" id="forsaljning">
+          <h4>5. Marknadsföring och försäljning</h4>
+          <p>
+            Kundanskaffning sker huvudsakligen genom etablerat professionellt nätverk, tidigare kontakter och referenser, samt direktdialog
+            med potentiella uppdragsgivare. Verksamheten bygger i första hand på relationsbaserad försäljning och kräver inga omfattande marknadsföringsinsatser.
+          </p>
+        </div>
+
+        <div class="section" id="genomforande">
+          <h4>6. Genomförande</h4>
+          <p>
+            Verksamheten startas i aktiebolagsform och bedrivs utan egna lokaler. Administration, bokföring och grundläggande företagsfunktioner hanteras
+            med standardiserade och kostnadseffektiva lösningar. Uppdrag tas in successivt och verksamhetens omfattning anpassas efter efterfrågan.
+          </p>
+        </div>
+
+        <div class="section" id="ekonomi">
+          <h4>7. Ekonomi och försörjning</h4>
+          <p>
+            Intäkter genereras genom konsultarvoden. Under uppstartsfasen kombineras verksamheten med stöd till start av näringsverksamhet samt pensionsuttag,
+            vilket skapar ekonomisk stabilitet medan kundbasen byggs upp. Målet är att verksamheten på sikt ska vara självfinansierande och ge ett stabilt överskott.
+          </p>
+        </div>
+
+        <div class="section" id="risk">
+          <h4>8. Risker och hantering</h4>
+          <p>
+            Identifierade risker omfattar bland annat beroende av en begränsad kundkrets i inledningsskedet samt variationer i uppdragsvolym.
+            Dessa hanteras genom låg fast kostnadsnivå, flexibel arbetstid och successiv breddning av kundbasen.
+          </p>
+        </div>
+
+        <div class="section" id="sysselsattning">
+          <h4>9. Sysselsättning</h4>
+          <p>
+            Verksamheten skapar egen sysselsättning och är avsedd att bedrivas långsiktigt inom ramen för företagande.
+          </p>
+        </div>
+
+        <div class="section" id="kontakt">
+          <h4>Kontakt</h4>
+          <p>
+            För frågor eller ytterligare information, se kontaktuppgifter på huvudsidan.
+          </p>
+        </div>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="card side" aria-label="Sammanfattning">
+        <h3>Sammanfattning</h3>
+        <p>
+          En saklig och avgränsad affärsplan för uppdragsbaserad konsultverksamhet, med låg fast kostnad och flexibel uppdragsvolym.
+        </p>
+
+        <div class="kv">
+          <div class="row">
+            <p class="k">Verksamhet</p>
+            <p class="v">Teknisk rådgivning &amp; projektstöd</p>
+          </div>
+          <div class="row">
+            <p class="k">Intäktsmodell</p>
+            <p class="v">Tim-/dagsarvode (konsultuppdrag)</p>
+          </div>
+          <div class="row">
+            <p class="k">Kundsegment</p>
+            <p class="v">Industri, infrastruktur, offentlig sektor</p>
+          </div>
+          <div class="row">
+            <p class="k">Genomförande</p>
+            <p class="v">AB-form, inga egna lokaler</p>
+          </div>
+          <div class="row">
+            <p class="k">Riskhantering</p>
+            <p class="v">Låg kostnadsnivå, flexibilitet, breddning av kundbas</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:14px">
+          <h4>Snabblänkar</h4>
+          <p style="margin-top:8px; font-size:13px; color:var(--muted);">
+            <a href="#affarside">Affärsidé</a> ·
+            <a href="#tjanster">Tjänster</a> ·
+            <a href="#marknad">Marknad</a> ·
+            <a href="#ekonomi">Ekonomi</a> ·
+            <a href="#risk">Risk</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Jubrion AB — Affärsplan (webbversion).
+    </footer>
+  </div>
+
+  <script>
+    // Sätter datumchip och år automatiskt
+    (function(){
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth()+1).padStart(2,'0');
+      const dd = String(d.getDate()).padStart(2,'0');
+
+      const today = `${yyyy}-${mm}-${dd}`;
+      const chip = document.getElementById('todayChip');
+      if (chip) chip.textContent = `Datum: ${today}`;
+
+      const year = document.getElementById('year');
+      if (year) year.textContent = yyyy;
+    })();
+  </script>
+</body>
+</html>
 
