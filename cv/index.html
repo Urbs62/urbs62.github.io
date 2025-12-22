@@ -6,7 +6,7 @@
   <title>Urban Sandlund — CV</title>
   <style>
     :root{
-      --bg:#0b1220;
+      --bg:#101a2e;
       --card:#101a2e;
       --text:#e7eefc;
       --muted:#b6c4e6;
@@ -46,7 +46,7 @@
     .btn:hover{ background:rgba(255,255,255,.08); }
 
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      background: rgba(255,255,255,.05);
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -62,21 +62,18 @@
       align-items:center;
     }
 
-  .photo{
-  width:140px;
-  height:140px;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background-image: url("img/urban.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* viktiga rader */
-  color: transparent;
-  font-size: 0;
-}
-
+    .photo{
+      width:140px;
+      height:140px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background-image: url("img/urban.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: transparent;
+      font-size: 0;
+    }
 
     h1{ margin:0; font-size:34px; letter-spacing:-.02em; line-height:1.1; }
     .headline{ margin-top:8px; color:var(--muted); font-size:15px; }
@@ -95,6 +92,7 @@
       border:1px solid var(--line);
       border-radius:999px;
       background:rgba(255,255,255,.03);
+      color:var(--text);
     }
     .dot{
       width:8px; height:8px; border-radius:50%;
@@ -108,7 +106,6 @@
       border-left:1px solid var(--line);
       background: transparent;
     }
- }
 
     section{ margin-bottom:22px; }
     .h{
@@ -183,8 +180,7 @@
       <a href="/cv/sv" class="pill">SV</a>
       <span>Tip: Print → Save as PDF</span>
       <button class="btn" onclick="window.print()">Print / PDF</button>
-  </div>
-
+    </div>
 
     <div class="card">
       <header>
@@ -196,19 +192,14 @@
           <div class="meta">
             <span class="pill"><span class="dot"></span> Luleå, Sweden</span>
             <span class="pill">+46 70 524 65 84</span>
+            <span class="pill"><a href="mailto:urban@sandlund.org">urban@sandlund.org</a></span>
             <span class="pill">
-              <a href="mailto:urban@sandlund.org">urban@sandlund.org</a>
-            </span>
-            <span class="pill">
-              <a href="https://www.linkedin.com/in/urban-sandlund"
-               target="_blank"
-               rel="noopener">
-                 linkedin.com/in/urban-sandlund
+              <a href="https://www.linkedin.com/in/urban-sandlund" target="_blank" rel="noopener">
+                linkedin.com/in/urban-sandlund
               </a>
-          </span>
-    </div>
+            </span>
           </div>
-         
+
           <p style="margin-top:14px;">
             <a href="/cv/Urban_Sandlund_CV.pdf">Download CV (PDF)</a>
           </p>
@@ -307,7 +298,6 @@
               </ul>
             </div>
 
-            <!-- FIXED GAP -->
             <div class="xp">
               <div class="xphead">
                 <div>
@@ -385,4 +375,3 @@
   </div>
 </body>
 </html>
-
